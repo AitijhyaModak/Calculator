@@ -1,4 +1,9 @@
-body{
+/* base color rgb(212, 237, 237)
+primary color hwb(0 67% 28%) 
+secondary color */
+
+
+body {
     background-color: rgb(212, 237, 237);
     display: flex;
     justify-content: center;
@@ -7,52 +12,96 @@ body{
 
 
 
-#calculator{
+#calculator {
     border: black solid 1px;
     width: 430px;
-    height: 550px;
+    height: 600px;
     background-color: hwb(0 67% 28%);
-    border-radius: 12px;   
+    border-radius: 12px;
     margin-top: 80px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 #calculator {
     box-shadow: -7px 7px 20px 0px black;
 }
 
-div#screen{
-    border: black 1px solid;
+div#screen {
+    /* border: black 1px solid; */
     width: 93%;
     height: 115px;
     margin-top: 23px;
-    background-color: rgb(48, 44, 44);
+    background-color: rgb(52, 47, 47);
     border-radius: 10px;
 }
 
-div#keypad{
+div#keypad {
 
     width: 93%;
-    height: 360px;
+    height: 420px;
     border-radius: 10px;
-    background-color:rgb(100, 85, 85);
+    background-color: hwb(0 67% 28%);
+    /* border: 1px red solid; */
 }
 
-#AC{
+#AC {
     font-size: 3rem;
     margin-top: 10px;
     margin-left: 10px;
-    width:35%;
+    width: 40%;
 }
-#DEL{
-    font-size:3rem;
-    margin-top:10px;
-    margin-left:10px;
-    width:30%;
-}
-#PERCENT{
+
+#DEL {
     font-size: 3rem;
-    margin-left:10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 33%;
+}
+
+#PERCENT {
+    font-size: 3rem;
+    margin-left: 10px;
     border-radius: 50%;
+}
+
+button {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#numbers {
+    width: 78.6%;
+    /* border: 1px red solid; */
+    float: left;
+}
+
+.number {
+    font-size: 2.1rem;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    margin-right: 22px;
+}
+
+.number:hover {
+    opacity: 0.8;
+}
+
+#symbols {
+    /* border: green 1px solid; */
+    height: 320px;
+    padding: 0;
+    margin: 0;
+}
+
+.symbol {
+    font-size: 3rem;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    margin-left: 15.6px;
+    margin-top:15px;
 }
