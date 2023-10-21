@@ -7,8 +7,6 @@ body{
 
 
 
-
-
 #calculator{
     border: black solid 1px;
     width: 430px;
@@ -16,7 +14,18 @@ body{
     background-color: hwb(0 67% 28%);
     border-radius: 12px;   
     margin-top: 80px;
+    display: flex;
+    justify-content: center;
 }
 #calculator {
     box-shadow: -7px 7px 20px 0px black;
+}
+
+div#screen{
+    border: black 1px solid;
+    width: 93%;
+    height: 115px;
+    margin-top: 23px;
+    background-color: rgb(48, 44, 44);
+    border-radius: 8px;
 }
