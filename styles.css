@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(212, 237, 237);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+
+
+
+#calculator{
+    border: black solid 1px;
+    width: 430px;
+    height: 550px;
+    background-color: hwb(0 67% 28%);
+    border-radius: 12px;   
+    margin-top: 80px;
+}
+#calculator {
+    box-shadow: -7px 7px 20px 0px black;
+}
