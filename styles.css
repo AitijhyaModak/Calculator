@@ -15,6 +15,7 @@ body{
     border-radius: 12px;   
     margin-top: 80px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 #calculator {
@@ -27,5 +28,31 @@ div#screen{
     height: 115px;
     margin-top: 23px;
     background-color: rgb(48, 44, 44);
-    border-radius: 8px;
+    border-radius: 10px;
+}
+
+div#keypad{
+
+    width: 93%;
+    height: 360px;
+    border-radius: 10px;
+    background-color:rgb(100, 85, 85);
+}
+
+#AC{
+    font-size: 3rem;
+    margin-top: 10px;
+    margin-left: 10px;
+    width:35%;
+}
+#DEL{
+    font-size:3rem;
+    margin-top:10px;
+    margin-left:10px;
+    width:30%;
+}
+#PERCENT{
+    font-size: 3rem;
+    margin-left:10px;
+    border-radius: 50%;
 }
