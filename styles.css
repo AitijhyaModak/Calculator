@@ -45,27 +45,23 @@ div#keypad {
     height: 420px;
     border-radius: 10px;
     background-color: hwb(0 67% 28%);
-    /* border: 1px red solid; */
+    border: 1px red solid;
 }
 
 #AC {
     font-size: 3rem;
     margin-top: 10px;
     margin-left: 10px;
-    width: 40%;
+    width: 45%;
+    border-radius: 8px;
 }
 
 #DEL {
     font-size: 3rem;
     margin-top: 10px;
-    margin-left: 10px;
-    width: 33%;
-}
-
-#PERCENT {
-    font-size: 3rem;
-    margin-left: 10px;
-    border-radius: 50%;
+    margin-right: 10px;
+    width: 45%;
+    border-radius: 8px;
 }
 
 button {
