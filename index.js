@@ -11,7 +11,10 @@ for (let number_button of number_buttons)
     number_button.addEventListener("click", onNumberPressed);
 
 function onNumberPressed(event) {
-    let numberpressed = event.srcElement.innerText;
+    let numberpressed;
+    if (event.type == 'keypress') numberpressed = event.key;
+    else
+        numberpressed = event.srcElement.innerText;
     bigtext = bigtext + numberpressed;
     showbigtext();
 }
@@ -31,6 +34,8 @@ function onEqualClick() {
         smalltext = number1 + operator + number2 + "=";
         showsmalltext();
         showbigtext();
+        number1 = bigtext;
+        operator_pressed = false;
     }
 }
 
@@ -42,7 +47,9 @@ for (let operator_button of operator_buttons)
 
 function onOperatorClick(event) {
     if (operator_pressed == false) {
-        operator = event.srcElement.innerText;
+        if (event.type == "keypress") operator = event.key;
+        else
+            operator = event.srcElement.innerText;
         number1 = bigtext;
         smalltext = number1 + operator;
         bigtext = "";
@@ -58,7 +65,9 @@ function onOperatorClick(event) {
         number1 = smalltext;
         number2 = "";
         operator_pressed = true;
-        operator = event.srcElement.innerText;
+        if (event.type == "keypress") operator == event.key;
+        else
+            operator = event.srcElement.innerText;
         smalltext = smalltext + operator;
         showsmalltext();
         bigtext = '';
@@ -70,7 +79,7 @@ function onOperatorClick(event) {
 
 
 let ac_button = document.querySelector("#AC");
-ac_button.addEventListener("click",clear);
+ac_button.addEventListener("click", clear);
 
 
 
@@ -102,18 +111,17 @@ function calculate() {
         return '';
     }
 
-    if (operator == '+') return Math.round((num1 + num2)*100) / 100;
-    else if (operator == '-') return  Math.round((num1 - num2)*100) / 100;
-    else if (operator == 'x') return  Math.round((num1 * num2)*100) / 100;
-    else return  Math.round((num1 / num2)*100) / 100;
+    if (operator == '+') return Math.round((num1 + num2) * 100) / 100;
+    else if (operator == '-') return Math.round((num1 - num2) * 100) / 100;
+    else if (operator == 'x') return Math.round((num1 * num2) * 100) / 100;
+    else return Math.round((num1 / num2) * 100) / 100;
 }
 
 
 let del_button = document.querySelector("#DEL");
-del_button.addEventListener("click",del)
-function del()
-{
-    if (bigtext != '') bigtext = bigtext.slice(0,bigtext.length - 1);
+del_button.addEventListener("click", del)
+function del() {
+    if (bigtext != '') bigtext = bigtext.slice(0, bigtext.length - 1);
     showbigtext();
 }
 
@@ -129,8 +137,23 @@ function showsmalltext() {
 
 let mouse_click_sound = new Audio("./assets/mouse-click.mp3");
 let buttons = document.querySelectorAll("button");
-for (let button of buttons) button.addEventListener("click",play);
-function play()
-{
+for (let button of buttons) button.addEventListener("click", play);
+function play() {
     mouse_click_sound.play();
+}
+
+
+
+
+document.addEventListener("keypress", keyboard)
+
+function keyboard(event) {
+    let key = event.key;
+    if ((Number(key) >= 0 && Number(key) <= 9) || key == '.')
+        onNumberPressed(event);
+    else if (key == '=') onEqualClick();
+    else if (key == '+' || key == '/' || key == 'x' || key == '-')
+        onOperatorClick(event);
+    else if (key == 'Enter') onEqualClick();
+    else if (event.which == 127) del();
 }
