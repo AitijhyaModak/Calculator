@@ -125,3 +125,12 @@ function showbigtext() {
 function showsmalltext() {
     document.querySelector("#subtext").innerText = smalltext;
 }
+
+
+let mouse_click_sound = new Audio("./assets/mouse-click.mp3");
+let buttons = document.querySelectorAll("button");
+for (let button of buttons) button.addEventListener("click",play);
+function play()
+{
+    mouse_click_sound.play();
+}
