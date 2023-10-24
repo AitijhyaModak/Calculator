@@ -94,16 +94,18 @@ function calculate() {
     let num1 = Number(number1);
     let num2 = Number(number2);
 
+    num1 = Math.round(num1 * 100) / 100;
+    num2 = Math.round(num2 * 100) / 100;
     if (operator == '÷' && num2 == 0) {
         alert("You cannot divide by 0 !!");
         clear();
         return '';
     }
 
-    if (operator == '+') return num1 + num2;
-    else if (operator == '-') return num1 - num2;
-    else if (operator == 'x') return num1 * num2;
-    else return num1 / num2;
+    if (operator == '+') return Math.round((num1 + num2)*100) / 100;
+    else if (operator == '-') return  Math.round((num1 - num2)*100) / 100;
+    else if (operator == 'x') return  Math.round((num1 * num2)*100) / 100;
+    else return  Math.round((num1 / num2)*100) / 100;
 }
 
 
@@ -124,3 +126,9 @@ function showsmalltext() {
     document.querySelector("#subtext").innerText = smalltext;
 }
 
+
+
+function round()
+{
+
+}
