@@ -125,10 +125,3 @@ function showbigtext() {
 function showsmalltext() {
     document.querySelector("#subtext").innerText = smalltext;
 }
-
-
-
-function round()
-{
-
-}
